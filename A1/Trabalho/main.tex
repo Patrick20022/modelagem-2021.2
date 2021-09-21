@@ -1,0 +1,198 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx,url}
+\usepackage{subfigure}
+\usepackage{float}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle,
+literate      =        % Support additional characters
+      {á}{{\'a}}1  {é}{{\'e}}1  {í}{{\'i}}1 {ó}{{\'o}}1  {ú}{{\'u}}1
+      {Á}{{\'A}}1  {É}{{\'E}}1  {Í}{{\'I}}1 {Ó}{{\'O}}1  {Ú}{{\'U}}1
+      {à}{{\`a}}1  {è}{{\`e}}1  {ì}{{\`i}}1 {ò}{{\`o}}1  {ù}{{\`u}}1
+      {À}{{\`A}}1  {È}{{\'E}}1  {Ì}{{\`I}}1 {Ò}{{\`O}}1  {Ù}{{\`U}}1
+      {ä}{{\"a}}1  {ë}{{\"e}}1  {ï}{{\"i}}1 {ö}{{\"o}}1  {ü}{{\"u}}1
+      {Ä}{{\"A}}1  {Ë}{{\"E}}1  {Ï}{{\"I}}1 {Ö}{{\"O}}1  {Ü}{{\"U}}1
+      {â}{{\^a}}1  {ê}{{\^e}}1  {î}{{\^i}}1 {ô}{{\^o}}1  {û}{{\^u}}1
+      {Â}{{\^A}}1  {Ê}{{\^E}}1  {Î}{{\^I}}1 {Ô}{{\^O}}1  {Û}{{\^U}}1
+      {œ}{{\oe}}1  {Œ}{{\OE}}1  {æ}{{\ae}}1 {Æ}{{\AE}}1  {ß}{{\ss}}1
+      {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1  {å}{{\r a}}1 {Å}{{\r A}}1
+      {ã}{{\~a}}1  {õ}{{\~o}}1  {Ã}{{\~A}}1 {Õ}{{\~O}}1
+      {ñ}{{\~n}}1  {Ñ}{{\~N}}1  {¿}{{?`}}1  {¡}{{!`}}1
+}
+\input{settings/Configuracoes_do_Preambulo}
+
+\begin{document}
+ 
+
+%\maketitle
+\thispagestyle{primeira}
+
+
+
+\section*{Resumo}
+Este artigo propõe um modelo SIR para o Ebola Virus Disease(EVD) usando derivados conformáveis. Discrevemos todas as maneiras possíveis de trasmissão da doença, direta e indireta. 
+\section*{Introdução}
+O Ebola Virus Disease (EVD) , anteriormente conhecido como febre hemorrágica Ébola, é uma doença grave e fatal causada pela infecção com uma das espécies do vírus do Ébola. O Ébola pode provocar doenças humanos e primatas não-humanos (macacos, gorilas e chimpanzés).
+O Ébola é provocado por um vírus da família Filoviridae, género
+Ebolavirus. Já foram descobertas cinco espécies do vírus do Ébola.
+Quatro delas provocam doenças nos humanos: Vírus do Ébola (Zaire
+ebolavirus); vírus do Sudão (Sudan ebolavirus); vírus da floresta
+Tai (Tai Forest ebolavirus, anteriormente conhecido por Cote
+d'Ivoire ebolavirus); e vírus Bundibugyo (Bundibugyo ebolavirus).
+A quinta espécie, o vírus Reston (Reston ebolavirus), provocou
+doenças em primatas não-humanos, mas não em humanos.
+Os vírus Ébola estão presentes em vários países africanos. O Ébola
+foi descoberto em 1976 perto do rio Ébola no território que
+pertence actualmente à República Democrática do Congo. Desde
+então, ocorrem surtos esporádicos em África. Ainda se desconhece o reservatório hospedeiro natural dos vírus Ébola. Contudo, com base em provas e na natureza de vírus semelhantes,
+os investigadores acreditam que o vírus é veiculado por animais e que os morcegos são os hospedeiros mais prováveis. Quatro das cinco
+subespécies surgem em animais hospedeiros originários de África. \\
+A partir desse panorama, julgamos pertinente modelar os casos de Ébola causados pela infecção do vírus Ébola. O objetivo do modelo proposto é descrever a dinâmica de incidência da população da África que apresentam Ébola. 
+
+
+\newpage
+\pagestyle{normal}
+
+\section*{Revisão da literatura}
+Segundo a \emph{mathematical model of Ebola virus disease in Africa} \cite{Aqsa Nazir} a principal fonte para iniciar a doença foi "animal ”, em tal
+maneira que quando um homem caçava por comida, seu contato acontecia com animais infectados (como macacos, chimpanzés e
+morcegos frugívoros, etc.). A observação mencionada acima permitiu
+para afirmarmos que o contato indireto pode ser uma das razões
+para a propagação da doença . Má higiene e sanitária
+condições são também uma das razões para a propagação do
+Vírus Ebola na África.
+Um modelo do tipo SIR (suscetível-infectado-recuperado) para o estudo da propagação do Ebola Virus Disease (EVD) é desenvolvido usando derivados conformáveis. Todas as maneiras possíveis de transmissão da doença é incorporada (direta ou indireta), como práticas funerárias, consumo de carne de caça contaminada e a contaminação ambiental, etc.  Descobrimos que a única situação livre de doença é a ausência de fluxo da doença do vírus Ebola do
+ambiente. Também observamos que, ao adotar algumas estratégias, como o isolamento de infectados
+indivíduos e enterro cuidadoso de cadáveres, a propagação de EVD pode ser controlada. \\
+Estudando o Artigo, percebemos que a persistência e recorrência de EVD na África é devido a : \\
+\begin{enumerate}
+    \item Consumo de carne de caça contaminada.
+    \item As cerimônias fúnebres.
+    \item Poluente ambiental.
+    \item Vômito, leite materno e urina, etc (Transmissão Direta).
+    \item Objetos como roupas contaminadas etc (transmissão indireta).
+\end{enumerate} 
+\\
+ Segundo o artigo de \emph{Mathematical model of Ebola transmission dynamics with relapse and reinfection} \cite{F.B. Agusto} a epidemia de Ebola ceifou a vida de mais de 11.300
+pessoas e infectou mais de 28.500. A doença causou devastação sobre as famílias, comunidades e ao sistema econômico de saúde dos 3 países mais afetados (Guiné, Libéria e Serra
+Leone).\\
+A recuperação de EVD requer tanto humoral quanto imunidade mediada por células, e há variabilidade na reação imunológica dos indivíduos. Além disso, a variabilidade
+na imunidade do hospedeiro pode determinar a suscetibilidade do hospedeiro a reinfecção. \\
+Entendemos no artigo que a letalidade do caso de EVD variou de 25\% a 90\% no entando a média de letalidade foi de 50\%, altamente perigoso. 
+\section*{Metodologia}
+Os modelos matemáticos epidêmicos são de fundamental importância para a análise e compreensão sobre a dinâmica do processo de contágio, nesse caso, de doenças infecciosas, na sociedade. A fim de compreendermos a evolução dos casos de Ébola um modelo matemático compartimental foi usado para estimar o número de casos secundários gerados por um caso índice, na ausência ou presença de medidas de controle.
+
+\section*{Formulação do modelo}
+Iremos modelar a doença do vírus Ebola por um modelo compartimental. \\
+Dito isso, iremos introduzir primeiro os nossos parâmetros com suas descrições do modelo que iremos apresentar. \\
+\begin{center}
+\begin{tabular}{||c c||} 
+ \hline
+ Variável & Descrição\\ [0.5ex] 
+ \hline\hline
+ $(t)$ & População de indivíduos suscetíveis  \\ 
+ \hline
+ $E(t)$ & População de indivíduos expostos  \\
+ \hline
+ $I_E$ & População de indivíduos sintomáticos no estágio inicial de infecção por EBOV \\
+ \hline
+ $I_L$ & População de indivíduos sintomáticos no estágio final da infecção por EBOV \\
+ \hline
+ $R_1(t),R_2(t)$ & População de indivíduos recuperados e imunes \\
+ \hline
+ $D(t)$ & População de indivíduos falecidos por Ebola \\[1ex]
+ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{||c c||} 
+ \hline
+ Parâmetros & Descrição\\ [0.5ex] 
+ \hline\hline
+ $\beta$ & Taxa de contato (transmissão) efetiva  \\ 
+ \hline
+ $\Pi$ & Taxa de recrutamento  \\
+ \hline
+ $\mu$ & Taxa de mortalidade natural \\
+ \hline
+ $\tau$ & Parâmetros de modificação para infecciosidade \\
+ \hline
+ $\rho$ & Taxa de reativação de infecção\\
+ \hline
+ $\sigma$ & Taxa de progressão de indivíduos sintomáticos \\[1ex]
+ \hline
+ $\alpha$ & Taxa de progressão de indivíduos com sintomas iniciais\\
+ \hline
+ $\xi$ & Taxa de progressão de indivíduos recuperados para a classe imune\\
+ \hline
+ $h$ & Fração de indivíduos sintomáticos que se recuperaram\\
+ \hline
+ $\epsilon$ & Parâmetros de modificação de reinfecção\\
+ \hline
+ $\gamma$ & Taxa de recuperação de indivíduos sintomáticos\\
+ \hline
+ $\delta$ & Taxa de cremação / sepultamento de indivíduos falecidos com Ebola\\ [1ex]
+ \hline
+\end{tabular}
+\end{center}
+\textbf{Iniciando o modelo}. \vspace{3mm}\\
+A nossa população total , $N_H(t)$ no tempo t é dividida em subpopulações mutuamente exclusivas de indivíduos que são suscetíveis($S(t)$), expostos ($E(t)$), indivíduos sintomático no estágio inicial de infecção por EVD ($I_E(t)$), indivíduos sintomático no estágio final da infecção por EVD ($I_L(t)$), se recuperaram e indivíduos imunes ($R_1(t), R_2(t)$) e indivíduos falecidos infectados com Ebola ($D(t)$). De modo a
+\\ $$N(t) = S(t) + E(t) + I_E(t) + I_L(t) + R_1(t) + R_2(t) + D(t)$$
+$$S(t) = \Pi -\lambda(I_E,I_L,R_1,D)S(t) - \mu S(t)$$
+$$E(t) = \lambda(I_E,I_L,D)S(t) + \epsilon \lambda(I_E,I_L,R_1,D)R_1(t)- (\sigma + \mu)E(t),$$
+$$I_E(t) = \sigma E(t)-(\alpha + \mu)I_E(t) + \rho R(t),$$
+$$I_L(t) = \alpha I_E(t) - (\gamma + \mu)I_L(t),$$
+$$R_1(t) = h \gamma I_L(t) - (\rho + \xi + \mu)R_1(t) - \epsilon \lambda(I_E,I_L,R_1,D)R_1(t),$$
+$$R_2(t) = \xi R_1(t) - \mu R_2(t) ,$$
+$$D(t) = (1 - h)\gamma I_L(t) - \delta D(t) ,$$
+Onde , $\lambda(I_E,I_L,R_1,D) = \dfrac{\Beta (I_E + I_L + \tau_1 R_1 + \tau_2 D)}{S + E + I_E + I_L + R_1 + R_2 + D}$ é a taxa de infecção da doença. \vspace{3mm}\\
+Pode-se vê que incluimos duas classes recuperadas( $R_1$ e $R_2$) e assumimos que os indivíduos na classe $R_1(t)$ podem sofrer reinfecção. Além disso, presumimos que esses indivíduos sejam capazes de transmitir o vírus, uma vez que os vírus podem persistir após a recuperação em partes do corpo e podem se espalhar através do sexo ou outros contatos com o sêmen. Já os da classe $R_2(t)$ experimentam imunidade vitalícia.
+
+\newpage
+\begin{thebibliography}{9}
+\bibitem{F.B. Agusto}
+F.B. Agusto (2016) \emph{Mathematical model of Ebola transmission dynamics with relapse and reinfection}.
+
+\bibitem{Aqsa Nazir}
+Aqsa Nazir , Naveed Ahmed , Umar Khan, Syed Tauseef Mohyud-Din , Kottakkaran Sooppy Nisar (2020) \emph{mathematical model of Ebola virus disease in Africa} 
+
+\bibitem{Revista Ciencia & Inovação }
+Revista Ciencia & Inovação - FAM - V.5, N.1 - JUN - (2020) \emph{principais métodos de diagnóstico
+e tratamento da doença causada pelo vírus Ebola} 
+
+\bibitem{Camila Soares de Souza}
+Camila Soares de Souza (2017) \emph{previsão de surto epidêmico de Ebola abordagens probabilísticas e determinísticas}
+
+\end{thebibliography}
+
+\end{document}
